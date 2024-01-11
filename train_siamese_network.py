@@ -37,12 +37,11 @@ def main():
     support_set_size = 20
     evaluate_each = 1000
     number_of_train_iterations = 1000000
-
     validation_accuracy = siamese_network.train_siamese_network(number_of_iterations=number_of_train_iterations,
                                                                 support_set_size=support_set_size,
                                                                 final_momentum=momentum,
                                                                 momentum_slope=momentum_slope,
-                                                                evaluate_each=evaluate_each, 
+                                                                evaluate_each=evaluate_each,
                                                                 model_name='siamese_net_lr10e-4')
     if validation_accuracy == 0:
         evaluation_accuracy = 0

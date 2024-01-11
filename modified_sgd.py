@@ -35,8 +35,8 @@ class Modified_SGD(Optimizer):
                  nesterov=False, lr_multipliers=None, momentum_multipliers=None, **kwargs):
         super(Modified_SGD, self).__init__(**kwargs)
         with K.name_scope(self.__class__.__name__):
+            self.learning_rate = K.variable(lr, name='lr')
             self.iterations = K.variable(0, dtype='int64', name='iterations')
-            self.lr = K.variable(lr, name='lr')
             self.momentum = K.variable(momentum, name='momentum')
             self.decay = K.variable(decay, name='decay')
         self.initial_decay = decay

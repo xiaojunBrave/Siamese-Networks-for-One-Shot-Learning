@@ -1,6 +1,6 @@
 import os
 
-import keras.backend as K
+# import keras.backend as K
 from keras.models import Model, Sequential
 from keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Input, Subtract, Lambda
 from keras.optimizers import Adam, SGD
@@ -9,8 +9,8 @@ import keras.backend as K
 
 import tensorflow as tf
 
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
+# import matplotlib.pyplot as plt
+# import matplotlib.gridspec as gridspec
 import numpy as np
 
 from omniglot_loader import OmniglotLoader
@@ -139,10 +139,12 @@ class SiameseNetwork:
         optimizer = Modified_SGD(
             lr=self.learning_rate,
             lr_multipliers=learning_rate_multipliers,
-            momentum=0.5)
+            momentum=0.5
+        )
 
         self.model.compile(loss='binary_crossentropy', metrics=['binary_accuracy'],
-                           optimizer=optimizer)
+                           optimizer=optimizer
+                           )
 
     def _write_logs_to_tensorboard(self, current_iteration, train_losses,
                                     train_accuracies, validation_accuracy,
