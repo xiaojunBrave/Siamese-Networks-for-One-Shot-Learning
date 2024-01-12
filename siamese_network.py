@@ -1,5 +1,5 @@
 import os
-
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 # import keras.backend as K
 from keras.models import Model, Sequential
 from keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Input, Subtract, Lambda
